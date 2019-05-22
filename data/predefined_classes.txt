@@ -1,15 +1,9 @@
-dog
 person
-cat
-tv
+bicycle
 car
-meatballs
-marinara sauce
-tomato soup
-chicken noodle soup
-french onion soup
-chicken breast
-ribs
-pulled pork
-hamburger
-cavity
+motorcycle
+airplane
+bus
+train
+truck
+boat
