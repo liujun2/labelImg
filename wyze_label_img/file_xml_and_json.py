@@ -55,8 +55,9 @@ def get_label_from_xml_file(xml_file_path):
    json_file_path = xml_file_path.replace('.xml','.json')
    json_data = load_file_json(json_file_path)
    print(json_data)
-   image_file_name = xml_file_path.replace('/','_').replace('.xml','.jpg').replace('files_','')
-   print('image_file_name',image_file_name)
+   print('image_file_name',xml_file_path)
+   image_file_name = xml_file_path.split('files/')[1].replace('/','_').replace('.xml','.jpg')
+   print('image_file_name 2 ',image_file_name)
    image_id = get_image_id_by_file_name(image_file_name,json_file_path)
    print('image_id',image_id)
    for l in label:

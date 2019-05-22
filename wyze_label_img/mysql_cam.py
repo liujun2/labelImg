@@ -12,11 +12,11 @@ pool = PooledDB(
 		port=3306
 	)
 
-def get_image_list_for_label():
+def get_image_list_for_label(number_need):
 	conn = pool.connection()
 	cur=conn.cursor()
-	SQL="SELECT * FROM wyze_cam_label WHERE (is_label = 2 or is_label = 3) ORDER BY image_id ASC limit 100;"
-	cur.execute(SQL)
+	SQL="SELECT * FROM wyze_cam_label WHERE (is_label = 2 or is_label = 3) ORDER BY image_id ASC limit %s;"
+	cur.execute(SQL,[number_need])
 	results=cur.fetchall()
 	cur.close()
 	conn.close()

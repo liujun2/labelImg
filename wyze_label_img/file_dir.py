@@ -1,4 +1,5 @@
 import os
+import shutil
 
 folder_file_path = []
 
@@ -29,3 +30,18 @@ def get_file_in_dir_path(dir_path,filter_str=''):
 		return file_filter_contain(folder_file_path,filter_str)
 	else:
 		return folder_file_path
+
+def dir_path_is_exist(file_path):
+	if(os.path.exists(file_path) == False):
+		os.makedirs(file_path)
+
+def delete_dir(dir_path):
+	shutil.rmtree(dir_path)
+
+def delete_file(file_path):
+	if(os.path.exists(file_path)):
+		os.remove(file_path)
+
+def delete_files(files_path):
+	for file in files_path:
+		delete_file(file)

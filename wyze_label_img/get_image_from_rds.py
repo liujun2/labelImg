@@ -1,9 +1,9 @@
 from mysql_cam import get_image_list_for_label
 from mysql_cam import update_images_label_status
 
-def get_image_list_and_update_status_from_rds():
+def get_image_list_and_update_status_from_rds(number_need):
 	image_catalog = []
-	list_image = get_image_list_for_label()
+	list_image = get_image_list_for_label(number_need)
 	if(list_image and len(list_image) > 0):
 		list_image_id = []
 		for img in list_image:

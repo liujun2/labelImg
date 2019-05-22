@@ -1,2 +1,2 @@
-# python 1_download_file.py
+python 0_check_file_and_start.py
 python ../labelImg.py ./files
