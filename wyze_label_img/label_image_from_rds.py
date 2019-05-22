@@ -10,9 +10,12 @@ def get_image_list_and_update_status_from_rds(number_need):
 			image_catalog.append(img[2])
 			list_image_id.append(img[1])
 		print(list_image_id)
-		update_images_label_status(list_image_id)
+		update_images_label_status(4,list_image_id)
 	print(image_catalog)
 	return image_catalog 
+
+def update_images_label_status_done(list_image_id):
+	update_images_label_status(5,list_image_id)
 
 def main():
 	get_image_list_and_update_status_from_rds()

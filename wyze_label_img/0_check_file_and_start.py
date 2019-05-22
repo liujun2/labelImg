@@ -3,7 +3,8 @@ from file_dir import dir_path_is_exist
 from file_dir import delete_dir
 from file_dir import delete_files
 from file_xml_and_json import get_label_from_xml_file
-from get_image_from_rds import get_image_list_and_update_status_from_rds
+from label_image_from_rds import get_image_list_and_update_status_from_rds
+from label_image_from_rds import update_images_label_status_done
 from s3_file import download_image_and_json_file
 from s3_file import upload_json_file_2_s3
 
@@ -23,9 +24,10 @@ def check_xml_file(xml_file,jpg_file,json_file):
 		print('合成xml和json')
 		for index in range(0,len(xml_file)):
 			print(xml_file[index])
-			get_label_from_xml_file(xml_file[index])
+			image_id = get_label_from_xml_file(xml_file[index])
 			upload_json_file_2_s3(xml_file[index])
 			delete_files([xml_file[index],jpg_file[index],json_file[index]])
+			update_images_label_status_done([image_id])
 	else:
 		print('不合成')
 

@@ -84,6 +84,7 @@ def get_label_from_xml_file(xml_file_path):
          })
    print(json_data)
    save_file_json(json_data,json_file_path)
+   return image_id
 
 if __name__ == '__main__':
    path = 'files/A4DA2230D83D/2019-05-10/A4DA2230D83D9b98ef1549f6438e_1557454218000_8_3/926473e4a6814c76b73d862b8bc621ce_f001.xml'

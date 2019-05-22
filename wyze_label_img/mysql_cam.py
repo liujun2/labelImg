@@ -22,10 +22,10 @@ def get_image_list_for_label(number_need):
 	conn.close()
 	return results
 
-def update_images_label_status(image_id_list):
+def update_images_label_status(status,image_id_list):
 	conn = pool.connection()
 	cur=conn.cursor()
-	SQL="UPDATE wyze_cam_label SET is_label = 4 WHERE image_id IN (%s)" % ','.join(['%s'] * len(image_id_list))
+	SQL="UPDATE wyze_cam_label SET is_label = " + str(status) + " WHERE image_id IN (%s)" % ','.join(['%s'] * len(image_id_list))
 	cur.execute(SQL,image_id_list)
 	conn.commit()
 	cur.close()
